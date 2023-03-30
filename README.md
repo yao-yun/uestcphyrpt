@@ -2,9 +2,13 @@
 
 `uestcphyrpt` is an unofficial latex package for report/assignment writing in Physical Experiment course from Glassgow college, UESTC.
 
+- Example PDF: https://github.com/yao-yun/uestcphyrpt/blob/main/example.pdf
+- Exanple Code: https://github.com/yao-yun/uestcphyrpt/blob/main/example.tex
 # Usage
 
 ## Metadata
+
+These metadata will be used in title page and header. 
 
 | Metadata | Macro | Options |
 | ---      | ---                          | ---     |
