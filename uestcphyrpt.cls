@@ -36,10 +36,10 @@
 \newcommand*{\@email}{\textcolor{red}{!Email Not Set!}}
 
 \newcommand*{\instructor}[1]{\gdef\@instructor{#1}}
-\newcommand*{\@instructor}{Fu Hao}
+\newcommand*{\@instructor}{\textcolor{red}{!Instructor Not Set!}}
 
 \newcommand*{\assistant}[1]{\gdef\@assistant{#1}}
-\newcommand*{\@assistant}{Lin Rui}
+\newcommand*{\@assistant}{\textcolor{red}{!Teaching Assistant Not Set!}}
 
 
 
@@ -83,6 +83,7 @@
 		\vspace{2cm}
 
 		{\Large
+		\begin{centering}
 			\begin{tabular}{r l}
 				Lab Title           & \begin{minipage}[t]{7cm}\begin{flushleft}\linespread{0.8}\@title\end{flushleft}\end{minipage} \\
 				Chinese Name        & \@author\\
@@ -92,6 +93,7 @@
 				Date performed      & \@date \\
 				Score               & \rule{5.5cm}{.1pt} \\
 			\end{tabular}
+		\end{centering}
 		}
 
 		\vfill
