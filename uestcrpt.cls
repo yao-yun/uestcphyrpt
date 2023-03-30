@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uestcrpt}[2023/03/28 UESTC report for phisics experiment]
+\ProvidesClass{uestcphyrpt}[2023/03/28 report template for Phisical Experiment course in Glasgow college, UESTC]
 
 % Based on \texttt{article}
 \LoadClass[a4paper, titlepage]{article}
@@ -7,7 +7,7 @@
 % Adjust page settings 
 \RequirePackage{geometry}
 
-% Package may be used
+% Package used or suggested
 
 \RequirePackage{graphicx}
 \RequirePackage[justification=centering]{caption}

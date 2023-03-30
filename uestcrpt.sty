@@ -1,7 +1,13 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uestcphyrpt}[2023/03/28 report template for Phisical Experiment course in Glasgow college, UESTC]
+
+% Based on \texttt{article}
+\LoadClass[a4paper, titlepage]{article}
+
 % Adjust page settings 
 \RequirePackage{geometry}
 
-% Package may be used
+% Package used or suggested
 
 \RequirePackage{graphicx}
 \RequirePackage[justification=centering]{caption}
@@ -13,6 +19,8 @@
 \RequirePackage{draftwatermark}
 
 \RequirePackage{enumitem}
+
+\RequirePackage{fancyhdr}
 
 % Information in title page and header. 
 
@@ -42,14 +50,13 @@
 \newcommand*{\labreport}{Lab Report}
 \newcommand*{\assignment}{Assignment} 
 
-\newgeometry{vmargin={15mm}, hmargin={25mm,25mm}}
-
-
+% watermark
 
 \SetWatermarkLightness{0.9} 
 \SetWatermarkText{Physical Lab Experimant 2023} 
 \SetWatermarkScale{0.35}
 
+% header and footer 
 \RequirePackage{fancyhdr}
 \fancyhf{}
 \fancyhead[LO]{Stu. No.: \@authorid}
@@ -59,6 +66,8 @@
 \pagestyle{fancy}
 
 \renewcommand*{\maketitle}{%
+	\newgeometry{vmargin={15mm}, hmargin={25mm,25mm}} % margin for title page
+	
 	\begin{titlepage}
 		\centering
 
@@ -89,15 +98,7 @@
 
 	\end{titlepage}
 
-	\newgeometry{vmargin={30mm}, hmargin={25mm,25mm}}
-
-
+	\newgeometry{vmargin={30mm}, hmargin={25mm,25mm}} % margin for main text
 }
-
-\ifx{\@reportclass\unskip}\prelab
-	\setlist[enumerate,1]{label={(\theenumi)}}
-\fi
-
-
 
 \endinput
