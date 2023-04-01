@@ -1,3 +1,7 @@
 *.un~
 *.synctex.gz
 *.xdv
+example.aux
+*.fdb_latexmk
+*.log
+*.fls

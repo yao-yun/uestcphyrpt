@@ -22,6 +22,8 @@
 
 \RequirePackage{fancyhdr}
 
+\RequirePackage{appendix}
+
 % Information in title page and header. 
 
 \newcommand*{\coursename}{Physical Experiment I}
@@ -50,6 +52,26 @@
 \newcommand*{\labreport}{Lab Report}
 \newcommand*{\assignment}{Assignment} 
 
+
+
+% watermark
+
+\SetWatermarkLightness{0.9} 
+\SetWatermarkText{Physical Lab Experimant 2023} 
+\SetWatermarkScale{0.35}
+
+% header and footer 
+
+\RequirePackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LO]{Stu. No.: \@authorid}
+\fancyhead[C]{Email: \@email}
+\fancyhead[R]{Date: \@date}
+\fancyheadoffset{0cm}
+\pagestyle{fancy}
+
+% Score table 
+
 \newcommand{\scorebox}{%
 	\marginpar{%
 		\begin{tabular}{|c|} \hline
@@ -59,24 +81,12 @@
 	}
 }
 
-% watermark
-
-\SetWatermarkLightness{0.9} 
-\SetWatermarkText{Physical Lab Experimant 2023} 
-\SetWatermarkScale{0.35}
-
-% header and footer 
-\RequirePackage{fancyhdr}
-\fancyhf{}
-\fancyhead[LO]{Stu. No.: \@authorid}
-\fancyhead[C]{Email: \@email}
-\fancyhead[R]{Date: \@date}
-\fancyheadoffset{0cm}
-\pagestyle{fancy}
-
-% Add score table to titles' marginal position
 \RequirePackage{titlesec}
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{\protect\scorebox}
+
+\newcommand{\noscorebox}{
+	\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+}
 
 \renewcommand*{\maketitle}{%
 	\newgeometry{vmargin={15mm}, hmargin={25mm,25mm}} % margin for title page
@@ -87,7 +97,6 @@
 		\includegraphics[width=\textwidth]{uestc-icon-banner.png}\par
 
 		\vspace{3cm}
-
 		
 		{\huge\coursename\unskip\strut\par}
 		\vspace{0.6cm}
@@ -117,5 +126,9 @@
 
 	\reversemarginpar
 }
+
+% Change appendix numbering
+
+
 
 \endinput
