@@ -50,6 +50,15 @@
 \newcommand*{\labreport}{Lab Report}
 \newcommand*{\assignment}{Assignment} 
 
+\newcommand{\scorebox}{%
+	\marginpar{%
+		\begin{tabular}{|c|} \hline
+			Score   \\ \hline
+					\\ \hline
+		\end{tabular}    
+	}
+}
+
 % watermark
 
 \SetWatermarkLightness{0.9} 
@@ -64,6 +73,10 @@
 \fancyhead[R]{Date: \@date}
 \fancyheadoffset{0cm}
 \pagestyle{fancy}
+
+% Add score table to titles' marginal position
+\RequirePackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{\protect\scorebox}
 
 \renewcommand*{\maketitle}{%
 	\newgeometry{vmargin={15mm}, hmargin={25mm,25mm}} % margin for title page
@@ -100,7 +113,9 @@
 
 	\end{titlepage}
 
-	\newgeometry{vmargin={30mm}, hmargin={25mm,25mm}} % margin for main text
+	\newgeometry{vmargin={30mm}, hmargin={35mm,25mm}} % margin for main text
+
+	\reversemarginpar
 }
 
 \endinput
