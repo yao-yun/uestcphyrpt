@@ -58,7 +58,7 @@
 
 \SetWatermarkLightness{0.9} 
 \SetWatermarkText{Physical Lab Experimant 2023} 
-\SetWatermarkScale{0.35}
+\SetWatermarkScale{2}
 
 % header and footer 
 
@@ -126,9 +126,5 @@
 
 	\reversemarginpar
 }
-
-% Change appendix numbering
-
-
 
 \endinput
