@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uestcphyrpt}[2023/03/28 report template for Phisical Experiment course in Glasgow college, UESTC]
+\ProvidesClass{uestcphyrpt}[2023/04/16 report template for Phisical Experiment course in Glasgow college, UESTC]
 
 % Based on \texttt{article}
 \LoadClass[a4paper, titlepage]{article}
@@ -69,6 +69,10 @@
 \fancyhead[R]{Date: \@date}
 \fancyheadoffset{0cm}
 \pagestyle{fancy}
+
+% numbered reference section
+
+\usepackage[numbib]{tocbibind}
 
 % Score table 
 

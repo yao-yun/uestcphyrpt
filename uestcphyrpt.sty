@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{uestcphyrpt}[2023/03/28 report template for Phisical Experiment course in Glasgow college, UESTC]
+\ProvidesPackage{uestcphyrpt}[2023/04/16 report template for Phisical Experiment course in Glasgow college, UESTC]
 
 % Based on \texttt{article}
 \LoadClass[a4paper, titlepage]{article}
@@ -22,6 +22,8 @@
 
 \RequirePackage{fancyhdr}
 
+\RequirePackage{appendix}
+
 % Information in title page and header. 
 
 \newcommand*{\coursename}{Physical Experiment I}
@@ -36,10 +38,10 @@
 \newcommand*{\@email}{\textcolor{red}{!Email Not Set!}}
 
 \newcommand*{\instructor}[1]{\gdef\@instructor{#1}}
-\newcommand*{\@instructor}{Fu Hao}
+\newcommand*{\@instructor}{\textcolor{red}{!Instructor Not Set!}}
 
 \newcommand*{\assistant}[1]{\gdef\@assistant{#1}}
-\newcommand*{\@assistant}{Lin Rui}
+\newcommand*{\@assistant}{\textcolor{red}{!Teaching Assistant Not Set!}}
 
 
 
@@ -50,13 +52,16 @@
 \newcommand*{\labreport}{Lab Report}
 \newcommand*{\assignment}{Assignment} 
 
+
+
 % watermark
 
 \SetWatermarkLightness{0.9} 
 \SetWatermarkText{Physical Lab Experimant 2023} 
-\SetWatermarkScale{0.35}
+\SetWatermarkScale{2}
 
 % header and footer 
+
 \RequirePackage{fancyhdr}
 \fancyhf{}
 \fancyhead[LO]{Stu. No.: \@authorid}
@@ -64,6 +69,28 @@
 \fancyhead[R]{Date: \@date}
 \fancyheadoffset{0cm}
 \pagestyle{fancy}
+
+% numbered reference section
+
+\usepackage[numbib]{tocbibind}
+
+% Score table 
+
+\newcommand{\scorebox}{%
+	\marginpar{%
+		\begin{tabular}{|c|} \hline
+			Score   \\ \hline
+					\\ \hline
+		\end{tabular}    
+	}
+}
+
+\RequirePackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{\protect\scorebox}
+
+\newcommand{\noscorebox}{
+	\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+}
 
 \renewcommand*{\maketitle}{%
 	\newgeometry{vmargin={15mm}, hmargin={25mm,25mm}} % margin for title page
@@ -74,7 +101,6 @@
 		\includegraphics[width=\textwidth]{uestc-icon-banner.png}\par
 
 		\vspace{3cm}
-
 		
 		{\huge\coursename\unskip\strut\par}
 		\vspace{0.6cm}
@@ -83,6 +109,7 @@
 		\vspace{2cm}
 
 		{\Large
+		\begin{centering}
 			\begin{tabular}{r l}
 				Lab Title           & \begin{minipage}[t]{7cm}\begin{flushleft}\linespread{0.8}\@title\end{flushleft}\end{minipage} \\
 				Chinese Name        & \@author\\
@@ -92,13 +119,16 @@
 				Date performed      & \@date \\
 				Score               & \rule{5.5cm}{.1pt} \\
 			\end{tabular}
+		\end{centering}
 		}
 
 		\vfill
 
 	\end{titlepage}
 
-	\newgeometry{vmargin={30mm}, hmargin={25mm,25mm}} % margin for main text
+	\newgeometry{vmargin={30mm}, hmargin={35mm,25mm}} % margin for main text
+
+	\reversemarginpar
 }
 
 \endinput
